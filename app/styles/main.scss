@@ -50,15 +50,80 @@ a {
 	}
 }
 section {
-	margin-bottom: 2em;
+	margin: 5em auto;
+	h3 {
+		font-size: 2em;
+	}
+	h4 {
+		font-size: 1.7em;
+	}
 	p {
 		font-size: 1.1em;
 	}
 }
 .banner {
+	margin-top: 0;
 	background: $c_primary_light;
 	padding: 5em 0;
+	position: relative;
+	.cloud {
+		position: absolute;
+		background: url($il + 'cloud1.svg') no-repeat center;
+		background-size: contain;
+        animation: cloud 10s infinite linear;
+		padding-bottom: 15%;
+	}
+	.cloud1 {
+		width: 60%;
+		margin-left: 10% * 2;
+		top: 10%;
+		opacity: 0.1;
+		animation-duration: 20s;
+		// animation-delay: 1s;
+	}
+	.cloud2 {
+		width: 0%;
+		margin-left: 20% * 2;
+		top: 20%;
+		opacity: 0.2;
+		animation-duration: 28s;
+		// animation-delay: 2s;
+	}
+	.cloud3 {
+		width: 30%;
+		margin-left: 30% * 2;
+		top: 30%;
+		opacity: 0.3;
+		animation-duration: 30s;
+		// animation-delay: 3s;
+	}
+	.cloud4 {
+		width: 40%;
+		margin-left: 40% * 2;
+		top: 40%;
+		opacity: 0.4;
+		animation-duration: 40s;
+		// animation-delay: -4s;
+	}
+	.cloud5 {
+		width: 50%;
+		margin-left: 50% * 2;
+		top: 70%;
+		opacity: 0.5;
+		animation-duration: 50s;
+		// animation-delay: 5s;
+	}
+	.cloud6 {
+		width: 60%;
+		margin-left: 60% * 2;
+		top: 5%;
+		opacity: 0.6;
+		animation-duration: 35s;
+		// animation-delay: 6s;
+	}
 	h2 {
+		position: relative;
+		z-index: 1;
 		font-size: 4em;
 		max-width: 800px;
 		margin: 0 auto;
@@ -69,7 +134,11 @@ section {
 			font-size: 2em;
 			line-height: 1em;
 			display: block;
-			letter-spacing: 0.1em;
+			letter-spacing: 0.05em;
 		}
 	}
+}
+@keyframes cloud {
+    from { left: -500px; }
+    to { left: 110%; }
 }
