@@ -11,9 +11,12 @@ $m_larger: 1400px;
 $m_huge: 1600px;
 
 // Colours:
-$c_bg: #e0e0e0;
+$blue: steelblue;
+$c_bg: lighten($blue,47%);
 $c_base: #333;
-$c_primary: #007bb6;
+$c_primary: $blue;
+$c_primary_light: lighten($blue,25%);
+$c_primary_dark: darken($blue,30%);
 $c_opposite: #fff;
 
 
@@ -30,24 +33,26 @@ $embed: #555;
 $il: "../images/"; //image location
 
 // @Font-face:
-@mixin serif {
-    font-family: serif;
+@mixin sans {
+    font-family: 'Droid Sans', sans-serif;
 }
-@mixin sansSerif {
-    font-family: sans-serif;
+@mixin display {
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: normal;
 }
 
 // Default styles:
 html, body {
     margin: 0;
     padding: 0;
-    @include sansSerif;
+    @include sans;
     background: $c_bg;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
 }
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1em;
+    @include display;
 }
 li, p, blockquote {
     line-height: 1.5em;
@@ -55,10 +60,10 @@ li, p, blockquote {
 
 .wrapper {
     width: 90%;
-    margin: 0 5%;
+    margin-left: auto;
+    margin-right: auto;
     @media only screen and (min-width: $m_medium) {
         width: $m_medium;
-        margin: 0 auto;
     }
 }
 .browsehappy {

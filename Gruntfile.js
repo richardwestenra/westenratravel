@@ -385,6 +385,7 @@ module.exports = function (grunt) {
       }
     },
 
+    /* jshint camelcase: false */
     notify_hooks: {
       options: {
         enabled: true,
