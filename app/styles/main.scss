@@ -16,7 +16,7 @@ a {
   }
 }
 
-.header {
+.header, .footer {
 	background: $c_primary_dark;
 	color: $c_opposite;
 	padding: 0.6em 0;
@@ -25,6 +25,16 @@ a {
 		@include clearfix;
 		@include display;
 	}
+	a {
+		color: $c_opposite;
+		display: inline-block;
+		text-decoration: none;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+}
+.header {
 	h1 {
 		margin: 0;
 		display: inline-block;
@@ -32,13 +42,14 @@ a {
 		font-weight: 500;
 	}
 	a {
-		color: $c_opposite;
 		display: inline-block;
 		float: right;
-		text-decoration: none;
 		margin-left: 3em;
-		&:hover, &:focus {
-			text-decoration: underline;
+		@media screen and (max-width: $m_tablet){
+			margin-left: 1em;
+			span {
+				@include visuallyhidden;
+			}
 		}
 	}
 }
@@ -66,7 +77,10 @@ section {
 	margin-top: 0;
 	background: $c_primary_light;
 	background: linear-gradient($c_primary_light, lighten($c_primary,18%));
-	padding: 5em 0;
+	padding: 2em 0;
+	@media screen and (min-width: $m_small){
+		padding: 5em 0;
+	}
 	position: relative;
 	overflow: hidden;
 	.cloud {
@@ -92,7 +106,14 @@ section {
 	h2 {
 		position: relative;
 		z-index: 1;
-		font-size: 4em;
+		font-size: 2em;
+		font-size: 8vw;
+		@media screen and (min-width: $m_small){
+			font-size: 3em;
+		}
+		@media screen and (min-width: $m_tablet){
+			font-size: 4em;
+		}
 		margin: 0 auto;
 		color: $c_primary_dark;
 		text-shadow: 0 1px 0 rgba(#fff,0.4);
@@ -121,5 +142,30 @@ blockquote {
 		font-family: Georgia, serif;
 		font-weight: normal;
 		opacity: 0.15;
+	}
+}
+section img {
+	max-width: 35%;
+	height: auto;
+	border: 4px solid #fff;
+	box-shadow: 0 0 3px rgba(#000,0.1);
+}
+.alignright {
+	clear: both;
+	float: right;
+	margin: 0.1em 0 1em 1em;
+}
+.footer {
+	text-align: center;
+	p {
+		margin: 0.5em 0;
+	}
+	@media screen and (min-width: $m_tablet){
+		.copy {
+			float: left;
+		}
+		.credit {
+			float: right;
+		}
 	}
 }
