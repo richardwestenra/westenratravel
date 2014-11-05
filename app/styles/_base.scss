@@ -62,9 +62,7 @@ li, p, blockquote {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    @media only screen and (min-width: $m_medium) {
-        width: $m_medium;
-    }
+    max-width: 750px;
 }
 .browsehappy {
     margin: 0.2em 0;
