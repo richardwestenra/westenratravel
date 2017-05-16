@@ -10,31 +10,74 @@ a {
   }
 }
 
-.header, .footer {
-	background: $c_primary_dark;
-	color: $c_opposite;
-	padding: 0.6em 0;
-	font-size: 1.2em;
-	.wrapper {
-		@include clearfix;
-		@include display;
-	}
-	a {
-		color: $c_opposite;
-		display: inline-block;
-	}
-}
 .header {
-	h1 {
-		margin: 0;
-		display: inline-block;
-		font-size: 1em;
-		font-weight: 500;
-	}
-	a {
-		display: inline-block;
-		float: right;
-		margin-left: 3em;
+  padding: 1em 0;
+  .wrapper {
+    @include clearfix;
+    @include display;
+  }
+  h1 {
+    margin: 0;
+    display: inline-block;
+    font-size: 1.4em;
+    font-weight: 500;
+    b {
+      display: block;
+      font-size: 1.8em;
+      font-weight: normal;
+      line-height: 1em;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    float: right;
+  }
+  li {
+    text-align: right;
+    margin-top: 0.4em;
+  }
+  a {
+    text-decoration: none;
+    color: $c_primary_dark;
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+    @media screen and (max-width: $m_tablet){
+      margin-left: 1em;
+      span {
+        @include visuallyhidden;
+      }
+    }
+  }
+}
+.nav {
+  background: $c_primary_dark;
+  color: $c_opposite;
+  padding: 0.6em 0;
+  font-size: 1.2em;
+  .wrapper {
+    @include clearfix;
+    @include display;
+  }
+  a {
+    color: $c_opposite;
+    display: inline-block;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  li {
+    display: inline-block;
+		margin-right: 3em;
+  }
+  a {
+    display: inline-block;
 		text-decoration: none;
 		&:hover, &:focus {
 			text-decoration: underline;
@@ -73,7 +116,7 @@ section {
 	background: linear-gradient($c_primary_light, lighten($c_primary,18%));
 	padding: 2em 0;
 	@media screen and (min-width: $m_small){
-		padding: 5em 0;
+		padding: 8em 0 5em;
 	}
 	position: relative;
 	overflow: hidden;
@@ -81,7 +124,7 @@ section {
 		position: absolute;
 		background: url($il + 'cloud1.svg') no-repeat left 0;
 		background-size: contain;
-        animation: cloud 10s infinite linear;
+    animation: cloud 10s infinite linear;
 		padding-bottom: 15%;
 		&:nth-of-type(even){
 			background-image: url($il + 'cloud2.svg');
@@ -97,6 +140,9 @@ section {
 			animation-delay: -999s / $i;
 		}
 	}
+  .wrapper {
+    position: relative;
+  }
 	h2 {
 		position: relative;
 		z-index: 1;
@@ -128,10 +174,16 @@ section {
   border: none;
   box-shadow: none;
   position: absolute;
-  right: 10%;
-  top: 20%;
+  right: -5%;
+  top: -7em;
   max-width: 400px;
   height: auto;
+  animation: airline 1 ease-out;
+  animation-duration: 10s;
+}
+@keyframes airline {
+    from { transform: translate(5em, 1em) scale(0.9); }
+    to { transform: translate(0, 0) scale(1); }
 }
 blockquote {
 	position: relative;
