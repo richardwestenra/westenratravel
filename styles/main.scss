@@ -93,7 +93,7 @@ section {
 			width: 60% / $i + 10%;
 			top: 90% / $i - 10%;
 			opacity: random(6) / 10;
-			animation-duration: 50s + random(50s);
+			animation-duration: 90s + random(50s);
 			animation-delay: -999s / $i;
 		}
 	}
@@ -103,19 +103,18 @@ section {
 		font-size: 2em;
 		font-size: 8vw;
 		@media screen and (min-width: $m_small){
-			font-size: 3em;
+			font-size: 2.5em;
 		}
 		@media screen and (min-width: $m_tablet){
-			font-size: 4em;
+			font-size: 3em;
 		}
 		margin: 0 auto;
 		color: $c_primary_dark;
 		text-shadow: 0 1px 0 rgba(#fff,0.4);
 		strong {
 			font-weight: normal;
-			text-transform: uppercase;
-			font-size: 2em;
-			line-height: 1em;
+			font-size: 2.8em;
+			line-height: 0.9em;
 			display: block;
 			letter-spacing: 0.05em;
 		}
@@ -124,6 +123,15 @@ section {
 @keyframes cloud {
     from { transform: translateX(-50vw); }
     to { transform: translateX(100vw) }
+}
+.banner__airline {
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  max-width: 400px;
+  height: auto;
 }
 blockquote {
 	position: relative;

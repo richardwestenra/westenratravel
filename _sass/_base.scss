@@ -11,8 +11,8 @@ $m_larger: 1400px;
 $m_huge: 1600px;
 
 // Colours:
-$blue: steelblue;
-$c_bg: lighten($blue,47%);
+$blue: #327ab7;
+$c_bg: #f5f5f5;
 $c_base: #333;
 $c_primary: $blue;
 $c_primary_light: lighten($blue,25%);
@@ -82,7 +82,7 @@ li, p, blockquote {
     &:-moz-placeholder { @content; }
     &::-moz-placeholder { @content; }
     &:-ms-input-placeholder { @content; }
-    &::-webkit-input-placeholder { @content; } 
+    &::-webkit-input-placeholder { @content; }
 }
 @mixin svg($img){
     .no-js &,
