@@ -7,3 +7,4 @@ bower_components
 zips
 *.sublime-project
 *.sublime-workspace
+_site

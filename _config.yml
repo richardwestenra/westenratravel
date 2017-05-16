@@ -1,0 +1,12 @@
+name: "Westenra Travel"
+description: ""
+
+markdown: kramdown
+highlighter: rouge
+
+permalink: :title/
+relative_permalinks: false
+
+sass:
+    sass_dir: _sass
+    style: compressed
