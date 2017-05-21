@@ -1,4 +1,16 @@
 {% include baseurl.html %}
 {% include header.html %}
-{{ content }}
+<div class="wrapper columns content">
+  <article class="leftCol">
+    {{ content }}
+  </article>
+  <div class="rightCol">
+    <aside class="contact">
+      <h3>Give us a call</h3>
+      <p><i class="icon-phone"></i> <a href="tel:006493632142" target="_blank">(09) 363 2142</a></p>
+      <p><i class="icon-mobile-alt"></i> <a href="tel:021667906" target="_blank">021 667 906</a></p>
+      <p><i class="icon-mail"></i> <a href="mailto:jeremyw@orbit.co.nz" target="_blank">jeremyw@orbit.co.nz</a></p>
+    </aside>
+  </div>
+</div>
 {% include footer.html %}

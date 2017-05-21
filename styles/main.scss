@@ -21,6 +21,11 @@ a {
     display: inline-block;
     font-size: 1.4em;
     font-weight: 500;
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
     b {
       display: block;
       font-size: 1.8em;
@@ -100,15 +105,6 @@ a {
 }
 section {
 	margin: 5em auto;
-	h3 {
-		font-size: 2em;
-	}
-	h4 {
-		font-size: 1.7em;
-	}
-	p {
-		font-size: 1.1em;
-	}
 }
 .banner {
 	margin-top: 0;
@@ -116,7 +112,7 @@ section {
 	background: linear-gradient($c_primary_light, lighten($c_primary,18%));
 	padding: 2em 0;
 	@media screen and (min-width: $m_small){
-		padding: 8em 0 5em;
+		padding: 6em 0 5em;
 	}
 	position: relative;
 	overflow: hidden;
@@ -174,9 +170,9 @@ section {
   border: none;
   box-shadow: none;
   position: absolute;
-  right: -5%;
-  top: -7em;
-  max-width: 400px;
+  right: 0;
+  top: -5em;
+  max-width: 380px;
   height: auto;
   animation: airline 1 ease-out;
   animation-duration: 10s;
@@ -184,6 +180,28 @@ section {
 @keyframes airline {
     from { transform: translate(5em, 1em) scale(0.9); }
     to { transform: translate(0, 0) scale(1); }
+}
+.promos {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  li {
+    max-width: 22%;
+  }
+  img {
+    width: 100%;
+  }
+  h4 {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+  }
+  p {
+    font-size: 0.85em;
+    margin: 0;
+  }
 }
 blockquote {
 	position: relative;
@@ -198,8 +216,8 @@ blockquote {
 		opacity: 0.15;
 	}
 }
-section img {
-	max-width: 35%;
+.content img {
+	max-width: 300px;
 	height: auto;
 	border: 4px solid #fff;
 	box-shadow: 0 0 3px rgba(#000,0.1);
@@ -208,6 +226,21 @@ section img {
 	clear: both;
 	float: right;
 	margin: 0.1em 0 1em 1em;
+}
+.columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.leftCol {
+  width: 65%;
+}
+.rightCol {
+  width: 30%;
+}
+.contact {
+  padding: 0 0 0.2em 2em;
+  border-left: 2px solid rgba(#000, 0.1);
 }
 .footer {
 	text-align: center;
